@@ -3,15 +3,16 @@ const app = express();
 
 const mongoose = require("mongoose")
 
-// app.listen(3000, () => {
-//     console.log("コンソール　起動しました")
-// })
+const PORT = process.env.PORT || 3000; 
 
+app.listen(PORT, () => { 
+    console.log(`API is listening on port ${PORT}`); 
+});
 
+app.get("/", (req, res) => { 
+    res.send("<h2>It's Working!</h2>");
+}); 
 
-
-// app.listen(3000);
-
-app.listen(3000, () => {
-    console.log("コンソール　起動しました")
-})
+app.get('/hello', (req, res) => {
+    res.json({ message: 'Hello, World!' });
+});  

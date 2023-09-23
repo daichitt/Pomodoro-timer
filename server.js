@@ -11,6 +11,7 @@ app.listen(PORT, () => {
 
 app.get("/", (req, res) => { 
     res.send("<h2>It's Working!</h2>");
+    // npm run start
 }); 
 
 app.get('/hello', (req, res) => {
